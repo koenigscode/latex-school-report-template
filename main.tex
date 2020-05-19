@@ -1,0 +1,75 @@
+\documentclass[10pt, a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+\usepackage{multirow, hyphenat, blindtext, hyperref, framed, textcomp, xcolor, fancyhdr, listings}
+\usepackage[left=3cm, right=3cm]{geometry}
+\usepackage[stable]{footmisc}
+\usepackage[parfill]{parskip} % empty line instead of indent
+\usepackage[most]{tcolorbox}
+\usepackage{listingsutf8}
+\usepackage{minted}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{helvet}
+
+\pagestyle{empty}
+
+\fancypagestyle{firstpage}{
+    \lhead{
+        \hspace{0.65cm}\includegraphics[height=1cm]{img/htl.png}
+    }
+    \rhead{HTL St. Pölten | Informatik}
+    \setlength\headheight{0cm} 
+    \fancyfoot{}
+}
+
+\fancypagestyle{content} {
+    \lhead{Michael König}
+    \rhead{\thepage}
+    \fancyfoot{}
+}
+
+\include{./preamble/helpers}
+\include{./preamble/code_formatting}
+
+\title{\vspace{1cm}}
+\author{
+    \begingroup
+    \setlength{\tabcolsep}{0.2cm}
+    \renewcommand{\arraystretch}{2}
+    \Large
+    \begin{tabular}{p{4cm}p{4cm}p{4cm}p{3cm}}
+        \huge Titel: & \multicolumn{3}{l}{\huge Titel} \\
+        ProtokollNr: & xx \\ \\ 
+        Klasse: & 4CHIF / Gr. B \\
+        Name: & Michael König & Katalognummer: & 10 \\
+        Aufgabe: & xx.xx.xxxx \\
+        Abgabe bis: & xx.xx.xxxx \\ \\ 
+        %\multicolumn{4}{l}{\LARGE Kurzbeschreibung:} \\
+        %\multicolumn{4}{p{14.6cm}}{
+            %TODO
+        %}
+    \end{tabular}
+  \endgroup
+}
+
+\date{}
+
+
+\begin{document}
+\shorthandoff{"} % makes " work as you'd expect
+\maketitle
+\thispagestyle{firstpage}
+\newpage
+\tableofcontents
+\newpage
+\pagestyle{content}
+\setcounter{page}{1}
+
+\input{./content/content}
+
+% \section{Quellen}
+% \href{https://google.com}{Example Link}
+
+\end{document}
